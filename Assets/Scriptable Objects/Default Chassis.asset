@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185af3c8677a11648b39f2c4f29550d5, type: 3}
+  m_Name: Default Chassis
+  m_EditorClassIdentifier: 
+  frontArmor: 10
+  sideArmor: 4
+  backArmor: 2
+  maxFuel: 100
+  maxAmmo: 41
+  hasDriver: 1
+  hasGunner: 1
+  hasCommander: 1
+  hasLoader: 1
+  transportCrewAmount: 0
+  chassiesHP: 1000
+  engineHP: 10
+  ammoHP: 10
+  fuelHP: 10
+  speed: 2
+  turnSpeed: 4
+  hasTracks: 1
+  leftTrackHP: 50
+  rightTrackHP: 50
+  hasWheels: 1
+  leftFrontWheelHP: 5
+  rightFrontWheelHP: 5
+  leftBackWheelHP: 5
+  rightBackWheelHP: 5
+  shockwaveFX: {fileID: 6202867509402169092, guid: b0daa43333ab14b46ac830668300dd6e, type: 3}
+  chassisSprite: {fileID: 21300000, guid: fdb325bc1bf08d54b9c22b1bdd96e965, type: 3}
+  spriteColor: {r: 0.15686275, g: 0.50980395, b: 0.21176472, a: 0}
+  tiremarksTrail: {fileID: 0}
