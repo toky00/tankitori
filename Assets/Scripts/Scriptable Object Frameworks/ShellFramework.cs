@@ -9,6 +9,7 @@ public class ShellFramework : ScriptableObject
     public float weight = 0.1f;
     public float propulsion = 10f; // THINK ABOUT PROPULSION DURATION
     public float ricochetChance = 15f;
+    public float ricochetOver45Modifier = 3f;
     [Header("Damage")]
     public float kineticDamage = 6f;
     public float innerExplosiveDamage = 2f;

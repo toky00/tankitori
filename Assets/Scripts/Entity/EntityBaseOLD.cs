@@ -102,7 +102,7 @@ public class EntityBaseOLD : MonoBehaviour
         Armor.turretArmor = turret.armorValue;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Main.isPlayer)
             MovementUpdates();
