@@ -614,7 +614,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Time: 10
+  m_Time: 50
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -644,8 +644,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 0.80784315}
+      key0: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0.7058824}
+      key1: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0.7058824}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 1, g: 1, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -661,7 +661,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 34117
+      atime1: 46838
       atime2: 65535
       atime3: 0
       atime4: 0
@@ -968,7 +968,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Time: 10
+  m_Time: 50
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -998,8 +998,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 0.80784315}
+      key0: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0.7058824}
+      key1: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0.7058824}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 1, g: 1, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1015,7 +1015,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 34117
+      atime1: 46838
       atime2: 65535
       atime3: 0
       atime4: 0
@@ -1557,7 +1557,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: fdb325bc1bf08d54b9c22b1bdd96e965, type: 3}
   m_Color: {r: 0.15619439, g: 0.509434, b: 0.21125121, a: 1}
   m_FlipX: 0
@@ -1799,6 +1799,10 @@ PrefabInstance:
     - target: {fileID: 6202867509402169092, guid: b0daa43333ab14b46ac830668300dd6e, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a
       value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140852522742591201, guid: b0daa43333ab14b46ac830668300dd6e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0daa43333ab14b46ac830668300dd6e, type: 3}
