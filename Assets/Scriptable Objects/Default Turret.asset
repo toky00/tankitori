@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81c9c1186c427541b16d3e0e4f7a3e3, type: 3}
   m_Name: Default Turret
   m_EditorClassIdentifier: 
-  armor: 8
-  health: 100
-  rotationSpeed: 2
-  projectileSpeedModifier: 1
-  reloadTime: 5
-  accuracy: 1
-  muzzleFX: {fileID: 8872741880761795645, guid: 377ea332d81fd4e4b83c25338d586d97, type: 3}
-  turretPrefab: {fileID: 0}
+  turretArmor: 8
+  turretHP: 100
+  turretRotationSpeed: 2
+  turretProjectileSpeedModifier: 1
+  turretReloadTime: 5
+  turretAccuracy: 8
+  turretMuzzleFX: {fileID: 8872741880761795645, guid: 377ea332d81fd4e4b83c25338d586d97, type: 3}
+  turretSprite: {fileID: 21300000, guid: c64d4b8625561b44d8f8bf3dfb8c7f43, type: 3}
+  spriteColor: {r: 0, g: 0, b: 0, a: 0}

@@ -6,14 +6,14 @@ using UnityEngine;
 public class TurretFramework : ScriptableObject
 {
     [Header("Stats")]
-    public float armor = 8f;
-    public float health = 100f;
-    public float rotationSpeed = 2f;
-    public float projectileSpeedModifier = 1f;
-    public float reloadTime = 5f;
-    public float accuracy = 1; // no clue how to calculate it yet
+    public float turretArmor = 8f;
+    public float turretHP = 100f;
+    public float turretRotationSpeed = 2f;
+    public float turretProjectileSpeedModifier = 1f;
+    public float turretReloadTime = 5f;
+    public float turretAccuracy = 1.5f; // the higher it is the more accurate it will be
     [Header("FX")]
-    public ParticleSystem muzzleFX;
+    public ParticleSystem turretMuzzleFX;
     /*[Header("SFX")]
     public AudioClip shootSFX;
     public AudioClip shockwaveSFX;
@@ -21,5 +21,6 @@ public class TurretFramework : ScriptableObject
     public AudioClip reloadingDoneSFX;
     public AudioClip reloadingStartSFX;*/
     [Header("Graphics")]
-    public GameObject turretPrefab;
+    public Sprite turretSprite;
+    public Color spriteColor;
 }

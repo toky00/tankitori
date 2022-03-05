@@ -31,18 +31,19 @@ public class ChassisFramework : ScriptableObject
     [Header("Movement")]
     public float speed = 2f;
     public float turnSpeed = 4f;
+    [Range(0f, 1f)]public float offroadSpeedModifier = 1f;
 
     [Header("Tracked")]
     public bool hasTracks = true;
-    public float leftTrackHP = 50f;
-    public float rightTrackHP = 50f;
+    [ConditionalHide("hasTracks", true)]public float leftTrackHP = 50f;
+    [ConditionalHide("hasTracks", true)] public float rightTrackHP = 50f;
 
     [Header("Wheeled")]
     public bool hasWheels = false;
-    public float leftFrontWheelHP = 5f;
-    public float rightFrontWheelHP = 5f;
-    public float leftBackWheelHP = 5f;
-    public float rightBackWheelHP = 5f;
+    [ConditionalHide("hasWheels", true)] public float leftFrontWheelHP = 5f;
+    [ConditionalHide("hasWheels", true)] public float rightFrontWheelHP = 5f;
+    [ConditionalHide("hasWheels", true)] public float leftBackWheelHP = 5f;
+    [ConditionalHide("hasWheels", true)] public float rightBackWheelHP = 5f;
 
     /*[Header("SFX")]
     public AudioClip idleLoopSFX;

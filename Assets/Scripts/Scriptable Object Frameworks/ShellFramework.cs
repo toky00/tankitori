@@ -30,7 +30,7 @@ public class ShellFramework : ScriptableObject
     public AudioClip flybyLoopSFX;
     public AudioClip explosionSFX;
     public AudioClip penetrationSFX;*/
-    [Header("Graphics")]
+    [Header("Reference")]
     public GameObject shellPrefab;
     [Header("Debug")]
     public static float maxSpeed = 140f;

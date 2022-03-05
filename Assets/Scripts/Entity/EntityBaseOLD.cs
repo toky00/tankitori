@@ -92,13 +92,13 @@ public class EntityBaseOLD : MonoBehaviour
     private float engineHP = 100f;
     private float ammoHP = 10f;
     private float fuelHP = 10f;
-    private TurretBase turret;
+    private TurretBaseOLD turret;
     [HideInInspector] public Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        turret = Components.turret.gameObject.GetComponent<TurretBase>();
+        turret = Components.turret.gameObject.GetComponent<TurretBaseOLD>();
         Armor.turretArmor = turret.armorValue;
     }
 

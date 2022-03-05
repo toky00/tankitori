@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretBase : MonoBehaviour
+public class TurretBaseOLD : MonoBehaviour
 {
     [Header("Test")]
     public float turretRotationSpeed = 2f; //MAKE A SCRIPTABLE OBJECT STATS FRAMEWORK
