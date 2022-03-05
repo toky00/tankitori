@@ -27,6 +27,8 @@ public class MasterEntityBase : MonoBehaviour
         public GameObject[] hitboxes;
         [Header("Core")]
         public Rigidbody2D entityRigidbody;
+        [Header("Graphics")]
+        public TrailRenderer[] trackOrTireMarks; // cus i can
     }
     public ObjectReferences objectReferences;
 
@@ -142,5 +144,24 @@ public class MasterEntityBase : MonoBehaviour
         }
         //ARMOR INTIALIZATION
         #endregion
+    }
+
+    private void FixedUpdate()
+    {
+        if (isPlayer && !isDestroyed)
+            MovementUpdates();
+    }
+
+    void MovementUpdates()
+    {
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.01f)
+        {
+            objectReferences.entityRigidbody.AddTorque(-Input.GetAxis("Horizontal") * currentTopTurnSpeed);
+        }
+
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f)
+        {
+            objectReferences.entityRigidbody.AddForce((objectReferences.entityRigidbody.transform.right * Input.GetAxis("Vertical")) * currentTopSpeed, ForceMode2D.Force);
+        }
     }
 }

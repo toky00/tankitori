@@ -28,6 +28,15 @@ public class ChassisFramework : ScriptableObject
     public float ammoHP = 10f;
     public float fuelHP = 10f;
 
+    [Header("Internal Component Positions")]
+    public string ammoLocation = "FR";
+    public string engineLocation = "F";
+    public string fuelLocation;
+    public string commanderLocation;
+    public string gunnerLocation;
+    public string loaderLocation;
+    public string driverLocation;
+
     [Header("Movement")]
     public float speed = 2f;
     public float turnSpeed = 4f;

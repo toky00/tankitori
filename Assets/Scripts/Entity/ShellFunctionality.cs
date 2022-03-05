@@ -4,80 +4,15 @@ using UnityEngine;
 
 public class ShellFunctionality : MonoBehaviour
 {
-    public LayerMask environment;
-    public LayerMask destructable;
-    public LayerMask penetrable;
-    public int ricochetChance = 30;
-    public int ricochetMultiplierOn45 = 3;
-    public float projectileAPValue;
-    public float projectileDMG;
-    public float explosionRadius;
-    public ParticleSystem explodeFX;
-    Rigidbody2D rig;
-    private int bounceCount = 0;
-    private float curVel = 0;
+    // once spawned assign all the values from the framework here
 
-    private void Start()
-    {
-        rig = GetComponent<Rigidbody2D>();
-    }
+    // on trigger get velocity
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        curVel = rig.velocity.magnitude;
-        Debug.Log(curVel);
-    }
+    // on collision raycast and check for ricochet
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 0.8f, environment + destructable);
-        if (hit && bounceCount <= 2 && curVel >= 2f)
-        {
-            CheckRicochetChance(hit);
-        }
-    }
+    // if not ricochet, calculate penetration
 
-    private void FixedUpdate()
-    {
-        Debug.DrawRay(transform.position, transform.up * 0.8f, Color.red);
-        if (rig.velocity.magnitude <= 2)
-        {
-            Collider2D col = GetComponent<Collider2D>();
-            col.enabled = false;
-            Destroy(gameObject, 5f);
-        }
-    }
-
-    private void CheckRicochetChance(RaycastHit2D hit)
-    {
-        int chance = Random.Range(0, 100);
-        int finalChance = (Vector2.Angle(transform.up, hit.normal) > 145) ? ricochetChance : ricochetChance * ricochetMultiplierOn45;
-        if (chance > finalChance)
-        {
-            TriggerProjectile();
-        }
-        else
-        {
-            Ricochet();
-        }
-    }
-
-    private void TriggerProjectile()
-    {
-        //Debug.Log("HIT! Bounced: " + bounceCount + " times.");
-        ParticleSystem ps = Instantiate(explodeFX, gameObject.transform.position, Quaternion.LookRotation((Vector2)transform.up));
-        Destroy(ps, 5f);
-        Destroy(gameObject);
-    }
-
-    private void Ricochet()
-    {
-        bounceCount++;
-        //Debug.Log("RICOCHET! Bounced: " + bounceCount + " times.");
-    }
-
-    private bool CheckPenetrationChance()
-    {
-        return true;
-    }
+    //// deal damage to internals if penetration and chassis with correct sounds ( not done in here )
+    
+    // deal damage to chassis and explode shell outside with correct fx and sounds ( not done in here )
 }

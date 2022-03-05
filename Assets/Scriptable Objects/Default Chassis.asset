@@ -26,8 +26,9 @@ MonoBehaviour:
   engineHP: 10
   ammoHP: 10
   fuelHP: 10
-  speed: 2
-  turnSpeed: 4
+  speed: 15
+  turnSpeed: 5
+  offroadSpeedModifier: 1
   hasTracks: 1
   leftTrackHP: 50
   rightTrackHP: 50

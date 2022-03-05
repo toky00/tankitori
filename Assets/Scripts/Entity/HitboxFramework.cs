@@ -16,5 +16,45 @@ public class HitboxFramework : MonoBehaviour
     {
         bool hasPenetrated = (armor > apValue) ? true : false;
         int maxComponentCrewDamage = Random.Range(1, 4); //MAX AMOUNT OF COMPONENTS AND CREW TO DAMAGE
+
+        if (hasPenetrated)
+        {
+            if (gameObject.name.StartsWith("F."))
+            {
+                // damage front components
+            }
+            else if (gameObject.name.StartsWith("B."))
+            {
+                // damage back components
+            }
+            else if (gameObject.name.StartsWith("BR"))
+            {
+                // damage back right
+            }
+            else if (gameObject.name.StartsWith("MR"))
+            {
+                // damage middle right
+            }
+            else if (gameObject.name.StartsWith("FR"))
+            {
+                // damage front right
+            }
+            else if (gameObject.name.StartsWith("BL"))
+            {
+                // damage back left
+            }
+            else if (gameObject.name.StartsWith("ML"))
+            {
+                // damage middle left
+            }
+            else if (gameObject.name.StartsWith("FL"))
+            {
+                // damage front left
+            }
+        }
+        else
+        {
+            // damage chassis with raw damage and explode shell on the outside
+        }
     }
 }
