@@ -9,7 +9,7 @@ public class TurretControl : MonoBehaviour
     public ParticleSystem muzzleFX;
     public ParticleSystem shockwaveFX;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_eb.isPlayer && !_eb.isDestroyed)
         {
