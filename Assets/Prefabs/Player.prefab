@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &1211352785412319062
 GameObject:
@@ -397,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2016717226761398610
 GameObject:
@@ -469,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2096462030394761237
 GameObject:
@@ -541,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2155757670620605258
 GameObject:
@@ -751,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &3159528227921022327
 GameObject:
@@ -823,6 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &5825843868339709693
 GameObject:
@@ -895,6 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &6036477362157653540
 GameObject:
@@ -1105,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
+  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &8076827656782342593
 GameObject:
@@ -1370,14 +1378,14 @@ MonoBehaviour:
     shellData:
     - {fileID: 11400000, guid: 664d4affe9b6ba741af5149f8e556dea, type: 2}
     hitboxes:
-    - {fileID: 5825843868339709693}
-    - {fileID: 3159528227921022327}
-    - {fileID: 2869378804921393537}
-    - {fileID: 1626351727549404251}
-    - {fileID: 24708033352780816}
     - {fileID: 6444748744479208965}
-    - {fileID: 2096462030394761237}
     - {fileID: 2016717226761398610}
+    - {fileID: 2869378804921393537}
+    - {fileID: 24708033352780816}
+    - {fileID: 3159528227921022327}
+    - {fileID: 1626351727549404251}
+    - {fileID: 2096462030394761237}
+    - {fileID: 5825843868339709693}
     entityRigidbody: {fileID: 8480872197708763837}
     trackOrTireMarks: []
   crewStats:

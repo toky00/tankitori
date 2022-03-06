@@ -61,7 +61,7 @@ public class ShellFunctionalityOLD : MonoBehaviour
         int finalChance = (Vector2.Angle(transform.up, hit.normal) > 145) ? ricochetChance : ricochetChance * ricochetMultiplierOn45;
         if (chance > finalChance)
         {
-            TriggerProjectile();
+            TriggerProjectile(hit);
         }
         else
         {
@@ -69,7 +69,7 @@ public class ShellFunctionalityOLD : MonoBehaviour
         }
     }
 
-    private void TriggerProjectile()
+    private void TriggerProjectile(RaycastHit2D hit)
     {
         //Debug.Log("HIT! Bounced: " + bounceCount + " times.");
         ParticleSystem ps = Instantiate(explodeFX, gameObject.transform.position, Quaternion.LookRotation((Vector2)transform.up));

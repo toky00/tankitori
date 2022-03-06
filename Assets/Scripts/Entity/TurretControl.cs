@@ -31,6 +31,8 @@ public class TurretControl : MonoBehaviour
     void TurretShoot()
     {
         GameObject shell = Instantiate(_eb.objectReferences.shellData[_eb.currentLoadedShell].shellPrefab, turretBarrelEnd.position, turretBarrelEnd.transform.rotation);
+        ShellFunctionality shellFunctionality = shell.gameObject.GetComponent<ShellFunctionality>();
+        shellFunctionality.shellData = _eb.objectReferences.shellData[_eb.currentLoadedShell];
         Vector2 recoilDir = -shell.transform.up;
         Rigidbody2D shellRb = shell.GetComponent<Rigidbody2D>();
 

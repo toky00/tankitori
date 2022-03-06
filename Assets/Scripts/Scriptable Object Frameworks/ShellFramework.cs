@@ -20,11 +20,11 @@ public class ShellFramework : ScriptableObject
     [Header("Modifiers")]
     public float apMod = 1.15f;
     public float recoilMod = 1f;
-    /*[Header("FX")]
-    public ParticleSystem propulsionFX;
+    [Header("FX")]
+    public ParticleSystem explosionFX;
+    /*public ParticleSystem propulsionFX;
     public ParticleSystem ricochetFX;
     public ParticleSystem penetrationFX;
-    public ParticleSystem explosionFX;
     [Header("SFX")]
     public AudioClip ricochetSFX;
     public AudioClip flybyLoopSFX;

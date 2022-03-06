@@ -7,6 +7,7 @@ public class MasterEntityBase : MonoBehaviour
     [Header("Core Stats")]
     public bool isPlayer;
     public string alliedFaction = "Ravenbane";
+    public List<List<string>> componentPositions;
     [System.Serializable]
     public class ObjectReferences
     {
@@ -70,6 +71,91 @@ public class MasterEntityBase : MonoBehaviour
     public float currentTopSpeed;
     public float currentTopTurnSpeed;
 
+    public void CalculateDamageInitial(float apValue, string hitboxName, float kineticDamage, float explosiveDamageTotal, float armorOfHitbox, float rawDamage)
+    {
+        int counterIdexOfHitbox = 0;
+        foreach (GameObject hitbox in objectReferences.hitboxes)
+        {
+            if(hitbox.name == hitboxName)
+            {
+                bool hasPenetrated = (armorOfHitbox < apValue) ? true : false; // perfomance determines lines and characters really, so the more you have of both, yes, cus binary
+                int maxComponentCrewDamage = Random.Range(2, 3); //MAX AMOUNT OF COMPONENTS AND CREW TO DAMAGE
+
+                chassisHealth -= rawDamage;
+                Debug.Log("Chassis took " + rawDamage + " raw damage.");
+
+                if (hasPenetrated)
+                {
+                    Debug.Log("Penetration!");
+                    int countComponentDamage = 0;
+                    foreach (string component in componentPositions[counterIdexOfHitbox])
+                    {
+                        countComponentDamage++;
+                        int rando = Random.Range(1, 100);
+                        if (rando >= 50)
+                        {
+                            if (countComponentDamage == maxComponentCrewDamage)
+                            {
+                                //less damage
+                                CalculateDamageFinal(component, kineticDamage / 2, explosiveDamageTotal / 2, apValue - armorOfHitbox);
+                            }
+                            else if (countComponentDamage <= maxComponentCrewDamage-1)
+                            {
+                                CalculateDamageFinal(component, kineticDamage, explosiveDamageTotal, apValue - armorOfHitbox);
+                            }
+                        }
+                        if(countComponentDamage >= maxComponentCrewDamage)
+                            break;
+                    }
+                }
+                else
+                {
+                    Debug.Log("No penetration!");
+                    if (componentPositions[counterIdexOfHitbox][0].Contains("Track") || componentPositions[counterIdexOfHitbox][0].Contains("Wheel"))
+                        CalculateDamageFinal(componentPositions[counterIdexOfHitbox][0], kineticDamage, explosiveDamageTotal, apValue - armorOfHitbox); // zero is track or wheel
+                }
+                break;
+            }
+            counterIdexOfHitbox++;
+        }
+    }
+
+    void CalculateDamageFinal(string name, float kineticDamage, float explosiveDamageTotal, float apValue)
+    {
+        if (name == "Ammo")
+            ammoHealth -= kineticDamage / 2 + explosiveDamageTotal;
+        else if (name == "Engine")
+            engineHealth -= kineticDamage + explosiveDamageTotal / 3;
+        else if (name == "Fuel")
+            fuelHealth -= kineticDamage / 2 + explosiveDamageTotal;
+        else if (name == "Left Track")
+            leftTrackHealth -= kineticDamage / 2 + explosiveDamageTotal;
+        else if (name == "Right Track")
+            rightTrackHealth -= kineticDamage / 2 + explosiveDamageTotal;
+        else if (name == "Turret")
+        {
+            if (apValue > objectReferences.turretData.turretArmor)
+                turretHealth -= kineticDamage + explosiveDamageTotal / 3;
+            else
+                Debug.Log("lol you suck.");
+        }
+        else if (name == "Gunner")
+            crewStats.gunnerHealth -= kineticDamage / 3 + explosiveDamageTotal;
+        else if (name == "Driver")
+            crewStats.driverHealth -= kineticDamage / 3 + explosiveDamageTotal;
+        else if (name == "Loader")
+            crewStats.loaderHealth -= kineticDamage / 3 + explosiveDamageTotal;
+        else if (name == "Left Front Wheel")
+            leftFrontWheelHealth -= kineticDamage + explosiveDamageTotal;
+        else if (name == "Right Front Wheel")
+            rightFrontWheelHealth -= kineticDamage + explosiveDamageTotal;
+        else if (name == "Left Back Wheel")
+            leftBackWheelHealth -= kineticDamage + explosiveDamageTotal;
+        else if (name == "Right Back Wheel")
+            rightBackWheelHealth -= kineticDamage + explosiveDamageTotal;
+        Debug.Log(name + " took damage.");
+    }
+
     private void OnEnable()
     {
         #region Crew
@@ -123,10 +209,10 @@ public class MasterEntityBase : MonoBehaviour
         //ARMOR INTIALIZATION
         foreach (GameObject hitbox in objectReferences.hitboxes)
         {
-            HitboxFramework hf = hitbox.GetComponent<HitboxFramework>();
+            HitboxFramework hf = hitbox.GetComponent<HitboxFramework>(); // temp variable that gets the HItboxFramework
             if(hitbox.name.StartsWith("F."))
             {
-                hf.armor = objectReferences.chassisData.frontArmor;
+                hf.armor = objectReferences.chassisData.frontArmor; // the HitboxFramework has an armor value which is 0 at the start, to make it work with the modular shit, we call the armor variable and assign the armor value from the scriptable object
             }
             else if(hitbox.name.StartsWith("B."))
             {
@@ -143,6 +229,20 @@ public class MasterEntityBase : MonoBehaviour
             }
         }
         //ARMOR INTIALIZATION
+        #endregion
+        //yes tru na
+        #region Component Placement
+        componentPositions = new List<List<string>>() 
+        { 
+            objectReferences.chassisData.componentPositions.leftFront,
+            objectReferences.chassisData.componentPositions.front,
+            objectReferences.chassisData.componentPositions.rightFront,
+            objectReferences.chassisData.componentPositions.leftMiddle,
+            objectReferences.chassisData.componentPositions.rightMiddle,
+            objectReferences.chassisData.componentPositions.leftBack,
+            objectReferences.chassisData.componentPositions.back,
+            objectReferences.chassisData.componentPositions.rightBack
+        };
         #endregion
     }
 
