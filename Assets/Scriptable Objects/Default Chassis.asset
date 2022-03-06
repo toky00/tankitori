@@ -17,6 +17,46 @@ MonoBehaviour:
   backArmor: 2
   maxFuel: 100
   maxAmmo: 41
+  componentPositions:
+    leftFront:
+    - Left Track
+    - Ammo
+    - Driver
+    front:
+    - Ammo
+    - Driver
+    - Turret
+    rightFront:
+    - Right Track
+    - Ammo
+    - Driver
+    leftMiddle:
+    - Left Track
+    - Turret
+    - Gunner
+    - Loader
+    - Ammo
+    rightMiddle:
+    - Right Track
+    - Turret
+    - Gunner
+    - Loader
+    - Ammo
+    leftBack:
+    - Left Track
+    - Fuel
+    - Engine
+    back:
+    - Engine
+    - Fuel
+    - Turret
+    - Gunner
+    - Loader
+    - Ammo
+    rightBack:
+    - Right Track
+    - Fuel
+    - Engine
   hasDriver: 1
   hasGunner: 1
   hasCommander: 1

@@ -14,6 +14,21 @@ public class ChassisFramework : ScriptableObject
     public float maxFuel = 100f;
     public int maxAmmo = 41;
 
+    [System.Serializable]
+    public class ComponentPositions
+    {
+        public List<string> leftFront = new List<string>() { "Left Track", "Ammo", "Driver" };
+        public List<string> front = new List<string>() { "Ammo", "Driver", "Turret" };
+        public List<string> rightFront = new List<string>() { "Right Track", "Ammo", "Driver" };
+        public List<string> leftMiddle = new List<string>() { "Left Track", "Turret", "Gunner", "Loader", "Ammo" };
+        public List<string> rightMiddle = new List<string>() { "Right Track", "Turret", "Gunner", "Loader", "Ammo" };
+        public List<string> leftBack = new List<string>() { "Left Track", "Fuel", "Engine" };
+        public List<string> back = new List<string>() { "Engine", "Fuel", "Turret", "Gunner", "Loader", "Ammo" };
+        public List<string> rightBack = new List<string>() { "Right Track", "Fuel", "Engine" };
+    }
+    [Header("Hitbox Component Positions")]
+    public ComponentPositions componentPositions;
+
     [Header("Crew")]
     public bool hasDriver = true;
     public bool hasGunner = true;
@@ -27,15 +42,6 @@ public class ChassisFramework : ScriptableObject
     public float engineHP = 10f;
     public float ammoHP = 10f;
     public float fuelHP = 10f;
-
-    [Header("Internal Component Positions")]
-    public string ammoLocation = "FR";
-    public string engineLocation = "F";
-    public string fuelLocation;
-    public string commanderLocation;
-    public string gunnerLocation;
-    public string loaderLocation;
-    public string driverLocation;
 
     [Header("Movement")]
     public float speed = 2f;

@@ -49,7 +49,7 @@ public class AimingReticle : MonoBehaviour
         if (!timerStarted)
         {
             timerForMoving = Random.Range(5f, 10f);
-            moveAccuracyMarkerTo = new Vector2(0, Random.Range((-sr.size.y/2f)-0.1f, (sr.size.y/2f)-0.1f));
+            moveAccuracyMarkerTo = new Vector2(0, Random.Range((-sr.size.y/2f)+0.1f, (sr.size.y/2f)-0.1f));
             timerStarted = true;
         }
         else
