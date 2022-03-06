@@ -24,4 +24,5 @@ MonoBehaviour:
   outerExplosiveRadius: 2
   apMod: 1.15
   recoilMod: 1
+  explosionFX: {fileID: 136669343828580923, guid: b22a0e58b5018cd40be335883719dd40, type: 3}
   shellPrefab: {fileID: 908906370001942394, guid: f6831f3286fb27046a9eeed6cf8ac36c, type: 3}

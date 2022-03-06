@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4530843137004780486}
   - component: {fileID: -2778528277096024122}
   - component: {fileID: 3697272074357512516}
-  - component: {fileID: -7111372039825949546}
+  - component: {fileID: 6445080705680162888}
   m_Layer: 6
   m_Name: Shell
   m_TagString: Untagged
@@ -257,7 +257,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-7111372039825949546
+--- !u!114 &6445080705680162888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 908906370001942394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1aba1e897c7d644870efc1505c1de4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e6598b9e4f2bdb4b90e5ccceaf3d47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   environment:
@@ -274,13 +274,5 @@ MonoBehaviour:
     m_Bits: 8
   destructable:
     serializedVersion: 2
-    m_Bits: 128
-  penetrable:
-    serializedVersion: 2
-    m_Bits: 128
-  ricochetChance: 15
-  ricochetMultiplierOn45: 3
-  projectileAPValue: 0
-  projectileDMG: 0
-  explosionRadius: 0
-  explodeFX: {fileID: 136669343828580923, guid: b22a0e58b5018cd40be335883719dd40, type: 3}
+    m_Bits: 0
+  shellData: {fileID: 0}

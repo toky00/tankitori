@@ -255,7 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &1211352785412319062
 GameObject:
@@ -266,7 +265,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6203486973120691567}
-  - component: {fileID: 1439175902}
   - component: {fileID: 2024666192}
   m_Layer: 0
   m_Name: Turret
@@ -294,23 +292,6 @@ Transform:
   m_Father: {fileID: 8480872197708763836}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1439175902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211352785412319062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e20a15b736cc245af2fb46928d7c23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretRotationSpeed: 50
-  armorValue: 8
-  projectileSpeed: 20
-  turretBarrelEnd: {fileID: 4640757984383705956}
-  _EB: {fileID: 0}
 --- !u!114 &2024666192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2016717226761398610
 GameObject:
@@ -471,7 +451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2096462030394761237
 GameObject:
@@ -544,7 +523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &2155757670620605258
 GameObject:
@@ -755,7 +733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &3159528227921022327
 GameObject:
@@ -828,7 +805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &5825843868339709693
 GameObject:
@@ -901,7 +877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &6036477362157653540
 GameObject:
@@ -1112,7 +1087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mb: {fileID: 0}
-  _mb_cf: {fileID: 0}
   armor: 0
 --- !u!1 &8076827656782342593
 GameObject:

@@ -9,7 +9,7 @@ public class ShellFunctionality : MonoBehaviour
     public LayerMask destructable;
 
     [Header("Data")]
-    public ShellFramework shellData; // assign this from the turret once instantiated
+    [HideInInspector]public ShellFramework shellData; // assign this from the turret once instantiated
 
     [Header("Debug")]
     Rigidbody2D rig;
@@ -25,7 +25,6 @@ public class ShellFunctionality : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) // on trigger get velocity
     {
         curVel = rig.velocity.magnitude;
-        Debug.Log(curVel);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) // on collision raycast and check for ricochet
@@ -89,6 +88,7 @@ public class ShellFunctionality : MonoBehaviour
     private void Ricochet()
     {
         bounceCount++;
+        Debug.Log("Ricochet!");
         // play ricochet vfx and sound
     }
 }
