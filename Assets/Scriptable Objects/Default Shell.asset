@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Shell
   m_EditorClassIdentifier: 
   weight: 0.1
-  propulsion: 5
+  propulsion: 10
   ricochetChance: 15
   ricochetOver45Modifier: 3
   kineticDamage: 6

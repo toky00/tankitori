@@ -18,7 +18,7 @@ public class ChassisFramework : ScriptableObject
     public class ComponentPositions
     {
         public List<string> leftFront = new List<string>() { "Left Track", "Ammo", "Driver" };
-        public List<string> front = new List<string>() { "Ammo", "Driver", "Turret" };
+        public List<string> front = new List<string>() { "Ammo", "Driver", "Turret"};
         public List<string> rightFront = new List<string>() { "Right Track", "Ammo", "Driver" };
         public List<string> leftMiddle = new List<string>() { "Left Track", "Turret", "Gunner", "Loader", "Ammo" };
         public List<string> rightMiddle = new List<string>() { "Right Track", "Turret", "Gunner", "Loader", "Ammo" };

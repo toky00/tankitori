@@ -9,13 +9,14 @@ public class ShellFunctionality : MonoBehaviour
     public LayerMask destructable;
 
     [Header("Data")]
-    [HideInInspector]public ShellFramework shellData; // assign this from the turret once instantiated
+    public ShellFramework shellData; // assign this from the turret once instantiated
 
     [Header("Debug")]
     Rigidbody2D rig;
     int bounceCount = 0;
     float curVel = 0;
     Vector3 curVelVec;
+    RaycastHit2D hitStored;
 
     void OnEnable() // once spawned assign all the values from the framework here
     {
@@ -30,9 +31,10 @@ public class ShellFunctionality : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) // on collision raycast and check for ricochet
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 0.8f, environment + destructable);
-        if (hit && bounceCount <= 2 && curVel >= 2f)
+        if (hit && bounceCount <= 2 && curVel >= 2f && hit.collider.gameObject != gameObject)
         {
-            CheckRicochetChance(hit);
+            hitStored = hit;
+            CheckRicochetChance();
         }
     }
 
@@ -59,13 +61,14 @@ public class ShellFunctionality : MonoBehaviour
         }
     }
 
-    private void CheckRicochetChance(RaycastHit2D hit)
+    private void CheckRicochetChance()
     {
+        Debug.Log("Check Ricochet.");
         int chance = Random.Range(0, 100);
-        float finalChance = (Vector2.Angle(transform.up, hit.normal) > 145) ? shellData.ricochetChance : shellData.ricochetChance * shellData.ricochetOver45Modifier;
+        float finalChance = (Vector2.Angle(transform.up, hitStored.normal) > 145) ? shellData.ricochetChance : shellData.ricochetChance * shellData.ricochetOver45Modifier;
         if (chance > finalChance)
         {
-            TriggerProjectile(hit); // if not ricochet, calculate penetration //// deal damage to internals if penetration and chassis with correct sounds ( not done in here ) // deal damage to chassis and explode shell outside with correct fx and sounds ( not done in here ) 
+            TriggerProjectile(); // if not ricochet, calculate penetration //// deal damage to internals if penetration and chassis with correct sounds ( not done in here ) // deal damage to chassis and explode shell outside with correct fx and sounds ( not done in here ) 
         }
         else
         {
@@ -73,14 +76,19 @@ public class ShellFunctionality : MonoBehaviour
         }
     }
 
-    private void TriggerProjectile(RaycastHit2D hit)
+    private void TriggerProjectile()
     {
+        Debug.Log("Trigger projectile.");
         ParticleSystem ps = Instantiate(shellData.explosionFX, gameObject.transform.position, Quaternion.LookRotation((Vector2)transform.up));
-        MasterEntityBase _mb = hit.collider.gameObject.GetComponent<HitboxFramework>()._mb;
-        HitboxFramework _hf = hit.collider.gameObject.GetComponent<HitboxFramework>();
-        _mb.CalculateDamageInitial(shellData.apMod * rig.velocity.magnitude / 10, hit.collider.gameObject.name, shellData.kineticDamage,
-            shellData.innerExplosiveDamage + shellData.outerExplosiveDamage, _hf.armor, shellData.rawDamage);
-        // play explosion sound, instantiate it
+        HitboxFramework _hf = hitStored.collider.gameObject.GetComponent<HitboxFramework>();
+        if (_hf != null)
+        {
+            MasterEntityBase _mb = _hf._mb;
+            Debug.Log(shellData.kineticDamage * rig.velocity.magnitude / 2);
+            _mb.CalculateDamageInitial(shellData.apMod * rig.velocity.magnitude, hitStored.collider.gameObject.name, shellData.kineticDamage*rig.velocity.magnitude/2,
+                shellData.innerExplosiveDamage + shellData.outerExplosiveDamage, _hf.armor, shellData.rawDamage);
+            // play explosion sound, instantiate it
+        }
         Destroy(ps, 5f);
         Destroy(gameObject);
     }

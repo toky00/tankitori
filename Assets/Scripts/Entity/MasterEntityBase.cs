@@ -82,18 +82,17 @@ public class MasterEntityBase : MonoBehaviour
                 int maxComponentCrewDamage = Random.Range(2, 3); //MAX AMOUNT OF COMPONENTS AND CREW TO DAMAGE
 
                 chassisHealth -= rawDamage;
-                Debug.Log("Chassis took " + rawDamage + " raw damage.");
 
                 if (hasPenetrated)
                 {
-                    Debug.Log("Penetration!");
                     int countComponentDamage = 0;
                     foreach (string component in componentPositions[counterIdexOfHitbox])
                     {
-                        countComponentDamage++;
                         int rando = Random.Range(1, 100);
-                        if (rando >= 50)
+                        if (rando >= 50 && component != null)
                         {
+                            countComponentDamage++;
+                            Debug.Log("Penetration into "+component);
                             if (countComponentDamage == maxComponentCrewDamage)
                             {
                                 //less damage
@@ -136,8 +135,6 @@ public class MasterEntityBase : MonoBehaviour
         {
             if (apValue > objectReferences.turretData.turretArmor)
                 turretHealth -= kineticDamage + explosiveDamageTotal / 3;
-            else
-                Debug.Log("lol you suck.");
         }
         else if (name == "Gunner")
             crewStats.gunnerHealth -= kineticDamage / 3 + explosiveDamageTotal;
@@ -153,7 +150,6 @@ public class MasterEntityBase : MonoBehaviour
             leftBackWheelHealth -= kineticDamage + explosiveDamageTotal;
         else if (name == "Right Back Wheel")
             rightBackWheelHealth -= kineticDamage + explosiveDamageTotal;
-        Debug.Log(name + " took damage.");
     }
 
     private void OnEnable()

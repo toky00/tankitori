@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3697272074357512516}
   - component: {fileID: 6445080705680162888}
   m_Layer: 6
-  m_Name: Shell
+  m_Name: Jerry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,5 +274,5 @@ MonoBehaviour:
     m_Bits: 8
   destructable:
     serializedVersion: 2
-    m_Bits: 0
-  shellData: {fileID: 0}
+    m_Bits: 128
+  shellData: {fileID: 11400000, guid: 664d4affe9b6ba741af5149f8e556dea, type: 2}

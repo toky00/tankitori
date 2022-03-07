@@ -5891,7 +5891,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1841811970
+--- !u!1001 &1779577150
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5912,11 +5912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.62
+      value: 20.12
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.48
+      value: 4.71
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5924,7 +5924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.79335415
+      value: 0.92107105
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5936,7 +5936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6087605
+      value: 0.3893946
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5948,11 +5948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763836, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 75
+      value: 45.834
       objectReference: {fileID: 0}
     - target: {fileID: 8480872197708763839, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
       propertyPath: m_Name
-      value: TEST DUMMY MOTHAFUCKA
+      value: Jerry's Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
