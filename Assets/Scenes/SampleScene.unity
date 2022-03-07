@@ -6014,3 +6014,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8480872197708763839, guid: eff8a1fd23d2c4d489c240b6f44ff3a7, type: 3}
   m_PrefabInstance: {fileID: 1779627022552959699}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7854450431812851821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854450431812851820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb02981430e4cb499861e7c9bc551b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
