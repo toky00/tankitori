@@ -11,6 +11,9 @@ public class AimingReticle : MonoBehaviour
     public GameObject barrelEndMarker;
     public float accuracyModifier;
 
+    public float minSize = 0.5f;
+    public float maxSize = 5f;
+
     private float timerForMoving = 1f;
     float count;
     private float accuracyMarkerMoveSpeed = 0.2f;
@@ -33,9 +36,9 @@ public class AimingReticle : MonoBehaviour
         barrelEndMarker.transform.localPosition = new Vector2(Vector3.Distance(playerPosition.position, accuracyMarker.transform.position), 0f);
 
         float sizeY = Vector3.Distance(playerPosition.position, accuracyMarker.transform.position)/accuracyModifier;
-        sizeY = Mathf.Clamp(sizeY, 0.15f, Mathf.Infinity);
+        sizeY = Mathf.Clamp(sizeY, minSize, maxSize);
 
-        sr.size = new Vector2(0.15f, sizeY);
+        sr.size = new Vector2(minSize, sizeY);
 
         MoveAccuracyMarker();
 
@@ -49,7 +52,7 @@ public class AimingReticle : MonoBehaviour
         if (!timerStarted)
         {
             timerForMoving = Random.Range(5f, 10f);
-            moveAccuracyMarkerTo = new Vector2(0, Random.Range((-sr.size.y/2f)+0.1f, (sr.size.y/2f)-0.1f));
+            moveAccuracyMarkerTo = new Vector2(0, Random.Range((-sr.size.y)+0.1f, (sr.size.y)-0.1f));
             timerStarted = true;
         }
         else

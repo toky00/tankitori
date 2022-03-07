@@ -47,7 +47,7 @@ public class ShellFunctionality : MonoBehaviour
     private void SpeedLimitShell()
     {
         curVelVec = rig.velocity;
-        curVelVec = new Vector3(Mathf.Clamp(rig.velocity.x, -140f, 140f), Mathf.Clamp(rig.velocity.y, -140f, 140f), 0);
+        curVelVec = new Vector3(Mathf.Clamp(rig.velocity.x, -100f, 100f), Mathf.Clamp(rig.velocity.y, -100f, 100f), 0);
         rig.velocity = curVelVec;
     }
 

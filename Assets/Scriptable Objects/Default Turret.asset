@@ -17,7 +17,7 @@ MonoBehaviour:
   turretRotationSpeed: 2
   turretProjectileSpeedModifier: 1
   turretReloadTime: 5
-  turretAccuracy: 8
+  turretAccuracy: 2.5
   turretMuzzleFX: {fileID: 8872741880761795645, guid: 377ea332d81fd4e4b83c25338d586d97, type: 3}
   turretSprite: {fileID: 21300000, guid: c64d4b8625561b44d8f8bf3dfb8c7f43, type: 3}
   spriteColor: {r: 0, g: 0, b: 0, a: 0}
